@@ -4,13 +4,8 @@
   "description": "Tryton webclient",
   "version": "4.7.0",
   "homepage": "http://www.tryton.org/",
-  "author": {
-    "name": "Tryton"
-  },
-  "repository": {
-    "type": "hg",
-    "url": "http://hg.tryton.org/sao"
-  },
+  "author": "Tryton",
+  "repository": "http://hg.tryton.org/sao",
   "bugs": {
     "url": "http://bugs.tryton.org/"
   },
@@ -32,8 +27,7 @@
     "tests"
   ],
   "scripts": {
-    "test": "./node_modules/.bin/grunt test",
-    "postinstall": "./node_modules/.bin/bower install"
+    "test": "./node_modules/.bin/grunt test"
   },
   "devDependencies": {
     "grunt-contrib-nodeunit": "^0.4",
@@ -46,13 +40,23 @@
     "tryton"
   ],
   "dependencies": {
+    "bootstrap": "^3.3",
+    "c3": "^0.4",
+    "d3": "^3.5",
+    "eonasdan-bootstrap-datetimepicker": "^4.17",
+    "fullcalendar": "^3.0",
+    "gettext.js": "^0.5",
     "grunt": "^0.4",
     "grunt-cli": "^0.1",
     "grunt-contrib-concat": "^0.5",
     "grunt-contrib-jshint": "^0.11",
-    "grunt-contrib-uglify": "^0.9",
     "grunt-contrib-less": "^1.2",
+    "grunt-contrib-uglify": "^0.9",
     "grunt-po2json": "^0.3",
-    "bower": "^1.7"
-  }
+    "jquery": "^2.1",
+    "moment": "^2.10",
+    "mousetrap": "^1.6",
+    "papaparse": "^4.1"
+  },
+  "main": "index.js"
 }
