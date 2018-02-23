@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
 
   var _ = grunt.util._;
+  var theme = 'admin-lte';  
   var locales = ["bg", "ca", "cs", "de", "es", "es_AR", "es_CO", "es_EC",
   "es_MX", "fr", "hu", "it", "lo", "lt", "nl", "pt_BR", "ru", "sl", "zh_CN"];
   var jsfiles = [
@@ -21,6 +22,11 @@ module.exports = function(grunt) {
       'src/window.js',
       'src/wizard.js',
       'src/board.js'
+  ];
+  var lessdirs = [
+    'theme/'+theme,
+    'src',         
+    'node_modules/bootstrap/less'
   ];
 
   // Project configuration.
@@ -96,19 +102,20 @@ module.exports = function(grunt) {
     less: {
         dev: {
             options: {
-                paths: ['src', 'bower_components/bootstrap/less']
+                paths: lessdirs
             },
             files: {
-                'dist/<%= pkg.name %>.css': 'src/*.less'
+                'dist/<%= pkg.name %>.css': 'theme/'+theme+'/*.less'
             }
         },
         'default': {
             options: {
-                paths: ['src', 'bower_components/bootstrap/less'],
-                yuicompress: true
+                paths: lessdirs,
+                yuicompress: true,
+                sourceMap: true,
             },
             files: {
-                'dist/<%= pkg.name %>.min.css': 'src/*.less'
+                'dist/<%= pkg.name %>.min.css': 'theme/'+theme+'/*.less'
             }
         }
     },

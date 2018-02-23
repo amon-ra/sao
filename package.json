@@ -16,7 +16,6 @@
     "Gruntfile.js",
     "LICENSE",
     "README",
-    "bower.json",
     "dist",
     "images",
     "index.html",
@@ -27,7 +26,8 @@
     "tests"
   ],
   "scripts": {
-    "test": "./node_modules/.bin/grunt test"
+    "test": "./node_modules/.bin/grunt test",
+    "postinstall": "ln -s ../../node_modules bower_components"
   },
   "devDependencies": {
     "grunt-contrib-nodeunit": "^0.4",
@@ -40,6 +40,7 @@
     "tryton"
   ],
   "dependencies": {
+    "admin-lte": "2",
     "bootstrap": "^3.3",
     "c3": "^0.4",
     "d3": "^3.5",
